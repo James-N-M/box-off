@@ -49,14 +49,39 @@
                             <div class="col-md-6">
                             <select name="status" id="" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}">
                                 <option></option>
-                                <option value="1">Boxer</option>
-                                <option value="2">Coach</option>
-                                <option value="3">Refferee</option>
-                                <option value="3">Doctor</option>
+                                @foreach ($statuses as $status)
+                                    <option value={{ $status->id }}>{{ $status->title }}</option>    
+                                @endforeach
                             </select>
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
+
+                            <div class="col-md-6">
+                            <select name="location" id="" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}">
+                                <option></option>
+                                @foreach ($locations as $location)
+                                    <option value={{ $location->id }}>{{ $location->city }}</option>    
+                                @endforeach
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="club" class="col-md-4 col-form-label text-md-right">{{ __('Club') }}</label>
+
+                            <div class="col-md-6">
+                            <select name="club" id="" class="form-control{{ $errors->has('club') ? ' is-invalid' : '' }}">
+                                <option></option>
+                                @foreach ($clubs as $club)
+                                    <option value={{ $club->id }}>{{ $club->name }}</option>    
+                                @endforeach
+                            </select>
+                            </div>
+                        </div>
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
