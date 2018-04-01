@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             <li><a class="nav-link" href="#">Profile</a></li>
-                            <li><a class="nav-link" href="event">Event</a></li>
+                            <li><a class="nav-link" href="events">Event</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
