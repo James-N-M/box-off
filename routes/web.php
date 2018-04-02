@@ -4,7 +4,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('events', 'EventController');
+//Route::resource('events', 'EventController');
+Route::get('events', 'EventController@index'); 
+Route::get('events/create', 'EventController@create'); 
+Route::post('events/create', 'EventController@store'); 
 
 Auth::routes();
 

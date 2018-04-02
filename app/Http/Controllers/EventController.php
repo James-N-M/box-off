@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Status;
+use App\Location;
+use App\Club; 
+use App\User; 
+
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,7 +19,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('events.index');
+        $events = Event::all(); 
+
+        return view('events.index', compact('events'));
     }
 
     /**
@@ -24,7 +31,13 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $locations = Location::all();
+        
+        $doctors = User::where('status_id', 3)->get(); 
+
+        $referees = User::where('status_id', 4)->get(); 
+
+        return view('events.create',compact('doctors', 'referees', 'locations')); 
     }
 
     /**
@@ -35,7 +48,14 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event; 
+        $event->name = $request->name;
+        $event->location_id = $request->location; 
+        $event->referee_id = $request->referee;
+        $event->doctor_id = $request->doctor; 
+        $event->date = $request->date; 
+        $event->save(); 
+        return 'did it'; 
     }
 
     /**

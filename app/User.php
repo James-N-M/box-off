@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','status', 
+        'name', 'email', 'password','status_id', 'club_id', 'location_id' , 
     ];
 
     /**
@@ -27,7 +27,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function location(){
+        return $this->hasOne('App\Location', 'id', 'location_id'); 
+    }
+
     public function status(){
-        return $this->hasOne('App\Status', 'id'); 
+        return $this->hasOne('App\Status', 'id', 'status_id'); 
+    }
+
+    public function club(){
+        return $this->hasOne('App\Club', 'id', 'club_id'); 
     }
 }
