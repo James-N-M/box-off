@@ -8,7 +8,7 @@
             <p>Please sign up with your credentials</p> 
         </div>
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="border: solid .5px #DC143C; ">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
