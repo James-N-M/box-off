@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('status_id');
             $table->integer('location_id'); 
             $table->integer('club_id');
-            $table->rememberToken();
+            $table->string('avatar')->default('default.jpg'); 
+            $table->rememberToken(); 
             $table->timestamps();
         });
     }
