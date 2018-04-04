@@ -12,6 +12,7 @@ Route::post('events/create', 'EventController@store');
 
 //Settings routes 
 Route::get('settings', 'Users\AccountController@edit');
+Route::post('settings', 'Users\AccountController@update'); 
 
 Auth::routes();
 

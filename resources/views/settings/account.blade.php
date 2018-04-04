@@ -8,9 +8,8 @@
             </div>
             <div class="card-body">
 
-                <form action="settings/{{ Auth::user()->id }}" method="POST">
+               <form action="/settings" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    {{ method_field('PATCH') }}
                     
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -29,11 +28,17 @@
                             <label for="password_confirmation">Confirm Password</label>
                             <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="******">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="avatar">Avatar</label>
                             <input id="avatar" type="file" class="form-control" name="avatar">
                         </div>
+                        <div class="form-group col-md-6">
+                            <br />
+                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}"  
+                                style="width: 50px; height: 50px; float:left; border-radius: 50%; margin:15px;" alt="" >
+                        </div>
                     </div>
+
                     <hr>
                     <button class="btn btn-sm btn-danger" type="submit"><strong>UPDATE</strong></button>
                 </form>
@@ -41,5 +46,4 @@
             </div>
         </div>
     </main>
-    <img src="/uploads/avatars/{{ $user->avatar }}" alt="" >
 @endsection
