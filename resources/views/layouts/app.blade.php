@@ -36,10 +36,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                            <li><a class="nav-link" href="#">Profile</a></li>
+                            <li><a class="nav-link" href="{{ url('profile')}}">Profile</a></li>
                             <li><a class="nav-link" href="events">Event</a></li>
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -47,6 +47,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
+                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; border-radius: 50%; margin-top:5px;">
                             <li class="nav-link">
                                 {{ Auth::user()->status->title }} 
                             </li>
