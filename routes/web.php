@@ -16,8 +16,11 @@ Route::post('events/create', 'EventController@store');
 Route::get('settings', 'Users\AccountController@edit');
 Route::post('settings', 'Users\AccountController@update'); 
 
-
+// Profile Routes 
 Route::get('profile', 'ProfileController@index'); 
+Route::get('profile/{user}', 'ProfileController@show'); 
+
+
 
 Auth::routes();
 
