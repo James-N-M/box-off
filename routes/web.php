@@ -20,7 +20,9 @@ Route::post('settings', 'Users\AccountController@update');
 Route::get('profile', 'ProfileController@index'); 
 Route::get('profile/{user}', 'ProfileController@show'); 
 
+//Match Routes
 
+Route::get('match/create', 'MatchController@create'); 
 
 Auth::routes();
 

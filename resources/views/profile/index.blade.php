@@ -26,8 +26,8 @@
                         </ul>
                      </div>
                     <div class="col-md-6">
-                      Wins {{ Auth::user()->record->wins }} 
-                      Loses {{ Auth::user()->record->loses }}
+                        Wins {{ Auth::user()->record->wins }} 
+                        Loses {{ Auth::user()->record->loses }}
                     </div>
                 </div>
             </div>
