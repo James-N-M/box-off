@@ -9,7 +9,7 @@
             <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    {{$user->avatar }}
+                <!-- Image avatar goes here.... -->
                 </div>
                 <div class="col-md-6">
                     <ul>

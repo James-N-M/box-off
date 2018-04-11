@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','status_id', 'club_id', 'location_id' , 
+        'name', 'email', 'password','status_id', 'club_id', 'location_id' , 'record_id'
     ];
 
     /**
@@ -38,4 +38,9 @@ class User extends Authenticatable
     public function club(){
         return $this->hasOne('App\Club', 'id', 'club_id'); 
     }
+
+    public function record(){
+        return $this->hasOne('App\Record','user_id', 'id'); 
+    }
+    
 }

@@ -9,10 +9,11 @@
             <div class="card-body">
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="border-radius: 50%; margin-top:5px;">
+                       <!-- <img src="" style="border-radius: 50%; margin-top:5px;"> -->
                      </div>
                     <div class="col-md-6">
-                        <p>hello </p>
+                        <p> Simple Description of user </p>
+                         
                     </div>
                 </div>
                 <div class="row col-md-12">
@@ -25,7 +26,8 @@
                         </ul>
                      </div>
                     <div class="col-md-6">
-                        <p>simple write up </p>
+                      Wins {{ Auth::user()->record->wins }} 
+                      Loses {{ Auth::user()->record->loses }}
                     </div>
                 </div>
             </div>
