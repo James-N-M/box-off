@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Past Results Submission') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="#">
+                    <form action="publishresults" method="POST">
                         @csrf
 
                         <div class="form-group row">

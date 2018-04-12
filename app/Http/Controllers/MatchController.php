@@ -39,7 +39,32 @@ class MatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $matchOne = new Match(); 
+        $matchOne->winner_id = $request->get('match_one_winner');
+        $matchOne->loser_id = $request->get('match_one_loser'); 
+        $matchOne->event_id = $request->get('event'); 
+        $matchOne->save(); 
+
+        $matchTwo = new Match(); 
+        $matchTwo->winner_id = $request->get('match_two_winner');
+        $matchTwo->loser_id = $request->get('match_two_loser'); 
+        $matchTwo->event_id = $request->get('event'); 
+        $matchTwo->save(); 
+
+        $matchThree = new Match(); 
+        $matchThree->winner_id = $request->get('match_three_winner');
+        $matchThree->loser_id = $request->get('match_three_loser'); 
+        $matchThree->event_id = $request->get('event'); 
+        $matchThree->save(); 
+
+
+        $matchFour = new Match(); 
+        $matchFour->winner_id = $request->get('match_four_winner');
+        $matchFour->loser_id = $request->get('match_four_loser'); 
+        $matchFour->event_id = $request->get('event'); 
+        $matchFour->save(); 
+
+
     }
 
     /**
