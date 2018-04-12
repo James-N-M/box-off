@@ -55,7 +55,7 @@ class EventController extends Controller
         $event->doctor_id = $request->doctor; 
         $event->date = $request->date; 
         $event->save(); 
-        return 'did it'; 
+        return redirect('/events');
     }
 
     /**

@@ -16,7 +16,8 @@ class MatchController extends Controller
      */
     public function index()
     {
-        //
+        $matches = Match::all()->groupBy('event_id'); 
+        return $matches; 
     }
 
     /**
@@ -64,6 +65,7 @@ class MatchController extends Controller
         $matchFour->event_id = $request->get('event'); 
         $matchFour->save(); 
 
+        return redirect('/home');
 
     }
 
@@ -73,9 +75,10 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function show(Match $match)
+    public function show($id)
     {
-        //
+        $matches = Match::all()->where('event_id', $id);
+        return view('matches.show',compact('matches')); 
     }
 
     /**

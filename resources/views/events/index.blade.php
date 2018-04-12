@@ -20,7 +20,7 @@
                 @foreach( $events as $event)
                 <tr>
                     <td> {{ $event->id }} </td>
-                    <td> {{ $event->name }} </td>
+                    <td> <a href="/match/{{$event->id}}">{{ $event->name }}</a> </td>
                     <td> {{ $event->location->city }} </td>
                     <td> {{ $event->referee->name }} </td>
                     <td> {{ $event->doctor->name }} </td>
