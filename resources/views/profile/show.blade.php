@@ -26,17 +26,19 @@
                         </ul>
                      </div>
                     <div class="col-md-6">
-                        Record<br />
-                        Wins {{ Auth::user()->record->wins }} 
-                        Loses {{ Auth::user()->record->loses }}
-                        <input type="hidden" id="wins" value="{{ Auth::user()->record->wins }} ">
-                        <input type="hidden" id="loses" value="{{ Auth::user()->record->loses }} ">
-                        <div id="piechart"></div>
+                        <ul class="list-group">
+                            <li class="list-group-item" >Record: Win \ Lose</li>
+                            <li class="list-group-item list-group-item-success">Wins: {{ Auth::user()->record->wins }}  </li>
+                            <li class="list-group-item list-group-item-danger">Loses: {{ Auth::user()->record->loses }} </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    
 @endsection
+
+
 
 

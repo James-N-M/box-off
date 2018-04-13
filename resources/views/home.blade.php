@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-        
+                <p>Welcome to Box Off </p>
                 </div>
             </div>
         </div>

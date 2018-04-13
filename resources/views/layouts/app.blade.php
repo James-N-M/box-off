@@ -35,10 +35,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav mr-auto">
-                            <li><a class="nav-link" href="{{ url('profile')}}">Profile</a></li>
-                            <li><a class="nav-link" href="events">Event</a></li>
+                            @if(Auth::user()->status == "Boxer" || Auth::user()->status == "Coach" )
+                            <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
+                            <li><a class="nav-link" href="/events">Event</a></li>
+                            @endif
                     </ul>
+                    @endauth
                     
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -87,6 +91,5 @@
     </div>  
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/js/graph.js"></script>
 </body>
 </html>

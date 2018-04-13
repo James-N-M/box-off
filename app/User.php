@@ -42,5 +42,5 @@ class User extends Authenticatable
     public function record(){
         return $this->hasOne('App\Record','user_id', 'id'); 
     }
-    
+
 }
