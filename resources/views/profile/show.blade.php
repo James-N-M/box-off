@@ -29,7 +29,9 @@
                         Record<br />
                         Wins {{ Auth::user()->record->wins }} 
                         Loses {{ Auth::user()->record->loses }}
-                        <div id="recordGraph"></div>
+                        <input type="hidden" id="wins" value="{{ Auth::user()->record->wins }} ">
+                        <input type="hidden" id="loses" value="{{ Auth::user()->record->loses }} ">
+                        <div id="piechart"></div>
                     </div>
                 </div>
             </div>

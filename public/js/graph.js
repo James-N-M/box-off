@@ -1,24 +1,30 @@
-$("#recordGraph").append("<strong> hello </strong> "); 
 
-// google.charts.load('current', {'packages':['corechart']});
-//       google.charts.setOnLoadCallback(drawChart);
 
-//       function drawChart() {
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', {'packages':['corechart']});
 
-//         var data = google.visualization.arrayToDataTable([
-//           ['Task', 'Hours per Day'],
-//           ['Work',     11],
-//           ['Eat',      2],
-//           ['Commute',  2],
-//           ['Watch TV', 2],
-//           ['Sleep',    7]
-//         ]);
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
 
-//         var options = {
-//           title: 'My Daily Activities'
-//         };
-
-//         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-//         chart.draw(data, options);
-//       }
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+        let wins = parseInt($("#wins").val());   
+        let loses = parseInt($("#loses").val());  
+        
+        var data = google.visualization.arrayToDataTable([
+            ["Col1", 'Col2'],
+            ['Wins', wins],
+            ['Loses', loses]
+        ]);
+    
+        var options = {
+          title: 'Wins Lose Record'
+        };
+            
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            
+        chart.draw(data, options);
+            
+        } 
