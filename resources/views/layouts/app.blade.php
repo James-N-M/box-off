@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Box-Off') }}
                     <img src="/title-icon.png" style="width:30px; height:30px;">
                 </a>
@@ -51,13 +51,13 @@
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                         <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; border-radius: 50%; margin-top:5px;">
-                            <li class="nav-link">
+                            <li class="nav-link" style="font-weight:bold;">
                                 {{ Auth::user()->status->title }} 
                             </li>
-                            <li class="nav-link">
+                            <li class="nav-link" style="font-weight:bold;">
                                 {{ Auth::user()->club->name }} 
                             </li>
-                            <li class="nav-link">
+                            <li class="nav-link" style="font-weight:bold;">
                                 {{ Auth::user()->location->city }}  
                             </li>
                             <li class="nav-item dropdown">

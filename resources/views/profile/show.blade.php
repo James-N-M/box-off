@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                    <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="border-radius: 50%; margin-bottom: 20px;">
+                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="border-radius: 50%; margin-bottom: 20px; ">
                      </div>
                     <div class="col-md-6">
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 

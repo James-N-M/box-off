@@ -65,7 +65,7 @@ class MatchController extends Controller
         $matchFour->event_id = $request->get('event'); 
         $matchFour->save(); 
 
-        return redirect('/home');
+        return redirect('/events');
 
     }
 
