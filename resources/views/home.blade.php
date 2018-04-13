@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                <p>Welcome to Box Off </p>
+                <p>Welcome to Box Off {{ Auth::user()->name }} </p>
                 </div>
             </div>
         </div>

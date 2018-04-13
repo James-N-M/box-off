@@ -37,13 +37,12 @@
                     <!-- Left Side Of Navbar -->
                     @auth
                     <ul class="navbar-nav mr-auto">
-                            @if(Auth::user()->status == "Boxer" || Auth::user()->status == "Coach" )
+                            @if(Auth::user()->status->title == "Boxer" || Auth::user()->status == "Coach" )
                             <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
                             <li><a class="nav-link" href="/events">Event</a></li>
                             @endif
                     </ul>
                     @endauth
-                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
