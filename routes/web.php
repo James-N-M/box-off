@@ -26,6 +26,11 @@ Route::post('match/publishresults', 'MatchController@store');
 
 // Post Routes 
 Route::get('/home', 'HomeController@index')->name('home'); // blending for authentication 
+Route::get('/post/{post}', 'PostController@show'); 
 Route::post('/posts', 'PostController@store'); 
+
+// Comment Routes 
+
+Route::post('/comment', 'CommentController@store'); 
 
 Auth::routes();

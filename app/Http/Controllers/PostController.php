@@ -17,4 +17,10 @@ class PostController extends Controller
 
         return redirect('/home');
     }
+
+    public function show(Post $post){
+        $comments = $post->comments->latest();
+        
+        return view('posts.show',compact('post', 'comments')); 
+    }
 }
