@@ -1,5 +1,6 @@
 <?php
 
+// Landing Page
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,6 +24,8 @@ Route::get('match/create', 'MatchController@create');
 Route::get('match/{id}', 'MatchController@show');  
 Route::post('match/publishresults', 'MatchController@store'); 
 
-Auth::routes();
+// Post Routes 
+Route::get('/home', 'HomeController@index')->name('home'); // blending for authentication 
+Route::post('/posts', 'PostController@store'); 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
