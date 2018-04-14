@@ -6,6 +6,8 @@
 
                 <div class="card-body">
                     {{ $post->body }}
+                    <br />
+                    <a href="/post/{{$post->id}}" style="text-decoration: none; color:red; "><i class="far fa-comments"></i> {{ $post->comments->count() }} </a>
                 </div>
                 <div class="card-footer text-muted">
                 <small class="text-muted">

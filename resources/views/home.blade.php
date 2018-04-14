@@ -34,7 +34,6 @@
             </div>
         </div>
     </div>
-    
     @foreach($posts as $post)
         @include('partials.post')
     @endforeach
