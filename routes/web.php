@@ -30,7 +30,10 @@ Route::get('/post/{post}', 'PostController@show');
 Route::post('/posts', 'PostController@store'); 
 
 // Comment Routes 
-
 Route::post('/comment', 'CommentController@store'); 
+
+//Admin panel to view charts for site usage
+
+Route::get('/admin','AdminController@index'); 
 
 Auth::routes();
