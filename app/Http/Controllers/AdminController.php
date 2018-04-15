@@ -46,7 +46,7 @@ class AdminController extends Controller
     }
 
     public function getEvents(){
-        $events = User::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
+        $events = Event::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
         ->where('created_at', '>=' , Carbon::now()->subMonth(12))
         ->groupBy('month')
         ->get();
@@ -54,7 +54,7 @@ class AdminController extends Controller
     }
 
     public function getMatches(){
-        $matches = User::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
+        $matches = Match::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
         ->where('created_at', '>=' , Carbon::now()->subMonth(12))
         ->groupBy('month')
         ->get();
@@ -62,7 +62,7 @@ class AdminController extends Controller
     }
 
     public function getLocations(){
-        $locations = User::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
+        $locations = Location::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
         ->where('created_at', '>=' , Carbon::now()->subMonth(12))
         ->groupBy('month')
         ->get();
@@ -70,13 +70,12 @@ class AdminController extends Controller
     }
 
     public function getClubs(){
-        $clubs = User::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
+        $clubs = Club::select( DB::raw('count(MONTHNAME(created_at)) as `count`'),DB::raw('MONTHNAME(created_at) month'))
         ->where('created_at', '>=' , Carbon::now()->subMonth(12))
         ->groupBy('month')
         ->get();
         return $clubs; 
     }
-
 
 
 }
