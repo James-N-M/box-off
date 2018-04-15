@@ -49,9 +49,10 @@
                             <div class="col-md-6">
                             <select name="status" id="" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}">
                                 <option></option>
-                                @foreach ($statuses as $status)
-                                    <option value={{ $status->id }}>{{ $status->title }}</option>    
-                                @endforeach
+                                <option value="1">Boxer</option>
+                                <option value="2">Coach</option>
+                                <option value="3">Doctor</option>
+                                <option value="4">Referee</option>
                             </select>
                             </div>
                         </div>
@@ -62,9 +63,9 @@
                             <div class="col-md-6">
                             <select name="location" id="" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}">
                                 <option></option>
-                                @foreach ($locations as $location)
-                                    <option value={{ $location->id }}>{{ $location->city }}</option>    
-                                @endforeach
+                                <option value="1">Windsor</option>
+                                <option value="2">Sarnia</option>
+                                <option value="3">Toronto</option>
                             </select>
                             </div>
                         </div>
@@ -75,9 +76,12 @@
                             <div class="col-md-6">
                             <select name="club" id="" class="form-control{{ $errors->has('club') ? ' is-invalid' : '' }}">
                                 <option></option>
-                                @foreach ($clubs as $club)
-                                    <option value={{ $club->id }}>{{ $club->name }}</option>    
-                                @endforeach
+                                <option value="1">Border City </option>
+                                <option value="2">Windsor Amatuer </option>
+                                <option value="3">Rough Boxing</option>
+                                <option value="4">Atlas Boxing </option>
+                                <option value="5">Kronk </option>
+                                <option value="6">Hard Knocks </option>
                             </select>
                             </div>
                         </div>
