@@ -42,6 +42,9 @@
                             <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
                             <li><a class="nav-link" href="/events">Event</a></li>
                             @endif
+                            @if(Auth::user()->id == 1)
+                            <li><a class="nav-link" href="/admin">Admin Page</a></li>
+                            @endif
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->
