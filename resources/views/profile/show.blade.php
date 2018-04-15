@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                        <img src="/uploads/avatars/default.jpg" style="border-radius: 50%; margin-bottom: 20px; ">
+                        <img src="/uploads/avatars/{{$user->avatar}}" style="border-radius: 50%; margin-bottom: 20px; ">
                      </div>
                     <div class="col-md-6">
                         <h3>Aboute Me</h3>
