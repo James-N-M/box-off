@@ -35,6 +35,11 @@ Route::post('/comment', 'CommentController@store');
 //Admin panel to and api routes to get info for graphs
 Route::get('/admin','AdminController@index'); 
 Route::get('/api/getposts', 'AdminController@getPosts'); 
-
+Route::get('/api/getcomments', 'AdminController@getComments'); 
+Route::get('/api/getusers', 'AdminController@getUsers'); 
+Route::get('/api/getevents', 'AdminController@getEvents'); 
+Route::get('/api/getmatches', 'AdminController@getMatches'); 
+Route::get('/api/getlocations', 'AdminController@getLocations'); 
+Route::get('/api/getclubs', 'AdminController@getClubs'); 
 
 Auth::routes();
