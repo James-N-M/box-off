@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Under Construciton</h1>
+    <div class="content" id="app">
+        <example-component></example-component>
+        <example></example> 
+    </div>
 @endsection

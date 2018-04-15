@@ -32,8 +32,9 @@ Route::post('/posts', 'PostController@store');
 // Comment Routes 
 Route::post('/comment', 'CommentController@store'); 
 
-//Admin panel to view charts for site usage
-
+//Admin panel to and api routes to get info for graphs
 Route::get('/admin','AdminController@index'); 
+Route::get('/api/getposts', 'AdminController@getPosts'); 
+
 
 Auth::routes();
