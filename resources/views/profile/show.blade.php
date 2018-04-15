@@ -12,7 +12,7 @@
                         <img src="/uploads/avatars/{{$user->avatar}}" style="border-radius: 50%; margin-bottom: 20px; ">
                      </div>
                     <div class="col-md-6">
-                        <h3>Aboute Me</h3>
+                        <h3>About Me</h3>
                         <p>Simple write up about the user and what acomplishments they have made</p>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
                         1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
