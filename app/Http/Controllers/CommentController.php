@@ -14,6 +14,6 @@ class CommentController extends Controller
 
         $comment->save(); 
 
-        return redirect('/post/1');
+        return redirect('/post/' . $comment->post_id);
     }
 }
