@@ -1,33 +1,34 @@
 <template>
     <div class="container"> 
+        <div class="chart-container" style="position: relative; height:10vh; width:10wh">
         <h1>Posts Per Month Graph</h1>
         <br>
-        <canvas id="postsGraph" width="400" height="400"></canvas>
+        <canvas id="postsGraph"></canvas>
         <h1>Comments Per Month Graph</h1>
         <br>
-        <canvas id="commentsGraph" width="400" height="400"></canvas>
+        <canvas id="commentsGraph"></canvas>
         <br>
        <h1>Users Per Month Graph</h1>
        <br>
-        <canvas id="usersGraph" width="400" height="400"></canvas>
+        <canvas id="usersGraph"></canvas>
         <br>
         <h1>Events Per Month Graph</h1>
         <br>
-        <canvas id="eventsGraph" width="400" height="400"></canvas>
+        <canvas id="eventsGraph"></canvas>
         <br>
         <h1>Matches Per Month Graph</h1>
         <br>
-        <canvas id="matchesGraph" width="400" height="400"></canvas>
+        <canvas id="matchesGraph" ></canvas>
         <br>
        <h1>Locations Added Per Month Graph</h1>
         <br>
-        <canvas id="locationsGraph" width="400" height="400"></canvas>
+        <canvas id="locationsGraph" ></canvas>
        <br>
        <h1>Clubs Added Per Month Graph</h1>
         <br>
-        <canvas id="clubsGraph" width="400" height="400"></canvas>
-
-    </div>
+        <canvas id="clubsGraph"></canvas>
+        </div>
+        </div>
 </template>
 
 <script>
@@ -58,6 +59,8 @@
                 });
 
                 var ctx = document.getElementById("postsGraph");
+                ctx.height = 200;
+                ctx.width = 200;
                 var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
