@@ -6,7 +6,7 @@ Route::get('/', function () {
 });
 
 //Settings Routes 
-Route::get('settings', 'Users\AccountController@edit');
+Route::get('settings', 'Users\AccountController@show');
 Route::post('settings', 'Users\AccountController@update'); 
 
 // Profile Routes 

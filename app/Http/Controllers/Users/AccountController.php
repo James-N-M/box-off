@@ -9,16 +9,20 @@ use App\Http\Controllers\Controller;
 
 class AccountController extends Controller
 {
-    public function edit()
+    public function show()
     {
-        $user = Auth::user();
-        return view('settings.account', compact('user'));
+        return view('settings.account');
     }
 
     public function update(Request $request)
     {
+        $this->validate(request(), [
+            'password' => 'required|confirmed|min:6'
+        ]);
+        
         if($request->get('password')){
-            echo 'has password';
+            Auth::user()->password = bcrypt($request->input('password'));
+            Auth::user()->save(); 
         }
 
         if($request->hasFile('avatar')){
