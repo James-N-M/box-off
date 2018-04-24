@@ -7,6 +7,8 @@
             <h1>Box-Off Ontario</h1> 
             <p>Please sign up with your credentials</p> 
         </div>
+    </div>
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="border: solid .5px #DC143C; ">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -40,49 +42,6 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
-
-                            <div class="col-md-6">
-                            <select name="status" id="" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}">
-                                <option></option>
-                                <option value="1">Boxer</option>
-                                <option value="2">Coach</option>
-                                <option value="3">Doctor</option>
-                                <option value="4">Referee</option>
-                            </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
-
-                            <div class="col-md-6">
-                            <select name="location" id="" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}">
-                                <option></option>
-                                <option value="1">Windsor</option>
-                                <option value="2">Sarnia</option>
-                                <option value="3">Toronto</option>
-                            </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="club" class="col-md-4 col-form-label text-md-right">{{ __('Club') }}</label>
-
-                            <div class="col-md-6">
-                            <select name="club" id="" class="form-control{{ $errors->has('club') ? ' is-invalid' : '' }}">
-                                <option></option>
-                                <option value="1">Border City </option>
-                                <option value="2">Windsor Amatuer </option>
-                                <option value="3">Rough Boxing</option>
-                                <option value="4">Atlas Boxing </option>
-                                <option value="5">Kronk </option>
-                                <option value="6">Hard Knocks </option>
-                            </select>
                             </div>
                         </div>
                         
