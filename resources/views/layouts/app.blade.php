@@ -14,8 +14,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     @stack('scripts')
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     
     <!-- Styles -->
@@ -40,10 +38,6 @@
                     <ul class="navbar-nav mr-auto">
                             @if(Auth::user()->status->title == "Boxer" || Auth::user()->status == "Coach" )
                             <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
-                            <li><a class="nav-link" href="/events">Event</a></li>
-                            @endif
-                            @if(Auth::user()->id == 1)
-                            <li><a class="nav-link" href="/admin">Admin Page</a></li>
                             @endif
                     </ul>
                     @endauth
@@ -92,6 +86,5 @@
             @yield('content')
         </main>
     </div>  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>
