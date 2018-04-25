@@ -26,7 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    // relationship                    local key on table || foreign key on current table 
     public function location(){
         return $this->hasOne('App\Location', 'id', 'location_id'); 
     }
@@ -43,4 +43,7 @@ class User extends Authenticatable
         return $this->hasOne('App\Record','user_id', 'id'); 
     }
 
+    public function about(){
+        return $this->hasOne('App\About','id','id'); 
+    }
 }

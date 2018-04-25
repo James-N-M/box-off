@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Users;
 
 use Auth; 
 use Image; 
+use App\About; 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,12 +17,19 @@ class AccountController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate(request(), [
-            'password' => 'required|confirmed|min:6'
-        ]);
         
         if($request->get('password')){
+            $this->validate(request(), [
+                'password' => 'confirmed|min:6'
+            ]);
             Auth::user()->password = bcrypt($request->input('password'));
+            Auth::user()->save(); 
+        }
+
+        if($request->get('about')){
+            $about = Auth::user()->about;
+            $about->body = $request->get('about');  
+            $about->save(); 
             Auth::user()->save(); 
         }
 
