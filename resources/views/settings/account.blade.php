@@ -40,6 +40,40 @@
                             <label for="about">About Me</label>
                             <textarea class="form-control" placeholder="{{Auth::user()->about->body}}" id="about" name="about" rows="3"></textarea>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" name="status">
+                                <option></option>
+                                <option value="1">Boxer</option>
+                                <option value="2">Coach</option>
+                                <option value="3">Doctor</option>
+                                <option value="4">Referee</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="win">Wins</label>
+                            <select class="form-control" id="win" name="win">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="loss">Loses</label>
+                            <select class="form-control" id="loss" name="loss">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="location">Location</label>
+                            <select class="form-control" id="location" name="location">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="club">Club</label>
+                            <select class="form-control" id="club" name="club">
+                                <option value=""></option>
+                            </select>
+                        </div>
                     </div>
 
                     <hr>
