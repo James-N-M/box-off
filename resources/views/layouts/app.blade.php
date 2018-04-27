@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    @stack('scripts')
     <!-- Fonts -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     
@@ -36,9 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     @auth
                     <ul class="navbar-nav mr-auto">
-                            @if(Auth::user()->status->title == "Boxer" || Auth::user()->status == "Coach" )
                             <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
-                            @endif
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Users;
 use Auth; 
 use Image; 
 use App\About; 
+use App\Location;
+use App\Club; 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,7 +15,9 @@ class AccountController extends Controller
 {
     public function show()
     {
-        return view('settings.account');
+        $clubs = Club::all();
+        $locations = Location::all(); 
+        return view('settings.account', compact('clubs', 'locations'));
     }
 
     public function update(Request $request)

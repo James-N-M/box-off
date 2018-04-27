@@ -51,27 +51,29 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="win">Wins</label>
-                            <select class="form-control" id="win" name="win">
-                                <option></option>
-                            </select>
+                            <label for="wins">Wins</label>
+                            <input class="form-control"type="number" name="wins">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="loss">Loses</label>
-                            <select class="form-control" id="loss" name="loss">
-                                <option></option>
-                            </select>
+                            <input class="form-control"type="number" name="loses">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="location">Location</label>
                             <select class="form-control" id="location" name="location">
                                 <option value=""></option>
+                                @foreach($locations as $location)
+                                    <option value="{{$location->id}}">{{$location->city}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="club">Club</label>
                             <select class="form-control" id="club" name="club">
                                 <option value=""></option>
+                                @foreach($clubs as $club)
+                                <option value="{{$club->id}}">{{$club->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
