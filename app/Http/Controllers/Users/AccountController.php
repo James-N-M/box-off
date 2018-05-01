@@ -17,13 +17,15 @@ class AccountController extends Controller
     {
         $clubs = Club::all();
         $locations = Location::all(); 
+        //return $locations; 
         return view('settings.account', compact('clubs', 'locations'));
     }
 
     public function update(Request $request)
     {
         
-        if($request->get('password')){
+        if($request->get('password'))
+        {
             $this->validate(request(), [
                 'password' => 'confirmed|min:6'
             ]);
@@ -35,6 +37,11 @@ class AccountController extends Controller
             $about = Auth::user()->about;
             $about->body = $request->get('about');  
             $about->save(); 
+            Auth::user()->save(); 
+        }
+
+        if($request->get('status')){
+            Auth::user()->status_id = $request->get('status');
             Auth::user()->save(); 
         }
 

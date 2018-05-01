@@ -13,25 +13,28 @@
                      </div>
                     <div class="col-md-6">
                         <h3>About Me</h3>
-                        <p class="alert alert-success">{{Auth::user()->about->body}}</p>
-                        <p class="alert alert-warning">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                        
+                        <p class="alert alert-success"></p>
+                        @if($errors->has('body'))
+                            <p class="alert alert-warning">Empty About Me</p>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="list-group">
-                            <li class="list-group-item" >Name: {{ $user->name }} </li>
-                            <li class="list-group-item list-group-item-success">Email: {{ $user->email }} </li>
-                            <li class="list-group-item list-group-item-info">Status: {{ $user->status->title }} </li>
-                            <li class="list-group-item list-group-item-warning">Location: {{ $user->location->city }} </li>
-                            <li class="list-group-item list-group-item-danger">Club: {{ $user->club->name }} </li>
+                            <li class="list-group-item">Name:{{ $user->name }}</li>
+                            <li class="list-group-item list-group-item-success">Email:{{ $user->email }}</li>
+                            <li class="list-group-item list-group-item-info">Status:{{ $user->status->title }}</li>
+                            <li class="list-group-item list-group-item-warning">Location:{{ $user->location->city }}</li>
+                            <li class="list-group-item list-group-item-danger">Club:{{ $user->club->name }}</li>
                         </ul>
                      </div>
                     <div class="col-md-6">
                         <ul class="list-group">
-                            <li class="list-group-item" >Record: Win \ Lose</li>
-                            <li class="list-group-item list-group-item-success">Wins: {{ Auth::user()->record->wins }}  </li>
-                            <li class="list-group-item list-group-item-danger">Loses: {{ Auth::user()->record->loses }} </li>
+                            <li class="list-group-item">Record: Win \ Lose</li>
+                            <li class="list-group-item list-group-item-success"></li>
+                            <li class="list-group-item list-group-item-danger"></li>
                         </ul>
                     </div>
                 </div>

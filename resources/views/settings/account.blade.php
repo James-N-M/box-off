@@ -44,10 +44,10 @@
                             <label for="status">Status</label>
                             <select class="form-control" id="status" name="status">
                                 <option></option>
-                                <option value="1">Boxer</option>
-                                <option value="2">Coach</option>
-                                <option value="3">Doctor</option>
-                                <option value="4">Referee</option>
+                                <option value="2">Boxer</option>
+                                <option value="3">Coach</option>
+                                <option value="4">Doctor</option>
+                                <option value="5">Referee</option>
                             </select>
                         </div>
                         <div class="form-group col-md-3">
@@ -61,7 +61,7 @@
                         <div class="form-group col-md-6">
                             <label for="location">Location</label>
                             <select class="form-control" id="location" name="location">
-                                <option value=""></option>
+                                <option value=""></option>  
                                 @foreach($locations as $location)
                                     <option value="{{$location->id}}">{{$location->city}}</option>
                                 @endforeach
@@ -71,9 +71,6 @@
                             <label for="club">Club</label>
                             <select class="form-control" id="club" name="club">
                                 <option value=""></option>
-                                @foreach($clubs as $club)
-                                <option value="{{$club->id}}">{{$club->name}}</option>
-                                @endforeach
                             </select>
                         </div>
                     </div>
