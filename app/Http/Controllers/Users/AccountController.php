@@ -23,7 +23,6 @@ class AccountController extends Controller
 
     public function update(Request $request)
     {
-        
         if($request->get('password'))
         {
             $this->validate(request(), [
@@ -34,15 +33,29 @@ class AccountController extends Controller
         }
 
         if($request->get('about')){
-            $about = Auth::user()->about;
-            $about->body = $request->get('about');  
-            $about->save(); 
-            Auth::user()->save(); 
+            $this->validate(request(), [
+                'about' => 'min:10'
+            ]);
+            if(!Auth::user()->about){
+                return About::create([
+                    'id' => Auth::user()->id,
+                     'body' => $request->get('about'),
+                ]);
+            }
+            else{
+                $about = Auth::user()->about;
+                $about->body = $request->get('about');
+                $about->save(); 
+            }
         }
 
         if($request->get('status')){
             Auth::user()->status_id = $request->get('status');
             Auth::user()->save(); 
+        }
+
+        if($request->get('location')){
+
         }
 
         if($request->hasFile('avatar')){
@@ -54,6 +67,6 @@ class AccountController extends Controller
             Auth::user()->save(); 
         }
 
-        return view('settings.account'); 
+        return redirect()->back(); 
     }
 }

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class About extends Model
 {
-    //
+    protected $fillable = array('id', 'body');
 }

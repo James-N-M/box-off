@@ -37,8 +37,8 @@
                             <input id="hi" type="textfield" class="form-control" name="hey">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="about">About Me</label>
-                            <textarea class="form-control" placeholder="{{Auth::user()->about->body}}" id="about" name="about" rows="3"></textarea>
+                            <label for="about">About Me <i>Char Max: 230</i></label>
+                            <textarea class="form-control" id="about" name="about" rows="3" maxlength="230"></textarea>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="status">Status</label>
@@ -77,7 +77,6 @@
 
                     <hr>
                     <button class="btn btn-sm btn-danger" type="submit"><strong>UPDATE</strong></button>
-
                     @include('partials.errors')
                 </form>
 

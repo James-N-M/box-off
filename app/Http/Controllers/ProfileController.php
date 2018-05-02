@@ -11,18 +11,12 @@ class ProfileController extends Controller
     public function show($id){
         $user = User::find($id); 
 
-        $rules = [
-            'name' => 'min:20',
-        ]; 
+        if(!$user->about){
+            // it doesnt exist add a flash message for not having about me set 
+            flash('<div style="text-align:center;">Please Head to <a href="#">this is a href</a> to set About me for</div>');
+            return redirect()->back(); 
+        }
 
-        $messages = [
-            'min' => 'Please create an about me', 
-        ];
-
-        $validator = Validator::make($user->about->toArray(), $rules, $messages); 
-        
-        return $validator->errors(); // here it just returns a empty array 
-
-        return view('profile.show', compact('user', 'validator'));
+        return view('profile.show', compact('user'));
     }
 }

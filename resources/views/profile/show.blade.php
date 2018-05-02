@@ -13,11 +13,7 @@
                      </div>
                     <div class="col-md-6">
                         <h3>About Me</h3>
-                        
-                        <p class="alert alert-success"></p>
-                        @if($errors->has('body'))
-                            <p class="alert alert-warning">Empty About Me</p>
-                        @endif
+                            <p class="alert alert-success">{{ $user->about->body }}</p>
                     </div>
                 </div>
                 <div class="row">
