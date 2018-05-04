@@ -55,8 +55,15 @@ class AccountController extends Controller
         }
 
         if($request->get('location')){
-
+            Auth::user()->location_id = $request->get('location');
+            Auth::user()->save(); 
         }
+
+        if($request->get('club')){
+            Auth::user()->club_id = $request->get('club');
+            Auth::user()->save(); 
+        }
+
 
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar'); 

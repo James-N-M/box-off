@@ -71,6 +71,9 @@
                             <label for="club">Club</label>
                             <select class="form-control" id="club" name="club">
                                 <option value=""></option>
+                                @foreach($clubs as $club)
+                                    <option value="{{$club->id}}">{{$club->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
