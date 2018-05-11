@@ -64,7 +64,16 @@ class AccountController extends Controller
             Auth::user()->save(); 
         }
 
+        if($request->get('wins')){
+            Auth::user()->record->wins = $request->get('wins');
+            Auth::user()->save(); 
+        }
 
+        if($request->get('loses')){
+            Auth::user()->record->loses = $request->get('wins');
+            Auth::user()->save(); 
+        }
+        
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar'); 
             $filename = time() . '.' . $avatar->getClientOriginalExtension(); 
@@ -74,6 +83,7 @@ class AccountController extends Controller
             Auth::user()->save(); 
         }
 
+        flash('Great Job Profile Successfully Updated'); 
         return redirect()->back(); 
     }
 }

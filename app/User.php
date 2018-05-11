@@ -40,7 +40,8 @@ class User extends Authenticatable
     }
 
     public function record(){
-        return $this->hasOne('App\Record','user_id', 'id'); 
+        return $this->hasOne('App\Record','id', 'id'); // make it so that this page isnt even visible to 
+                                                       // people that arent boxers and coaches 
     }
 
     public function about(){

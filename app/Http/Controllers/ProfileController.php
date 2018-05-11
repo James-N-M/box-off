@@ -13,10 +13,16 @@ class ProfileController extends Controller
 
         if(!$user->about){
             // it doesnt exist add a flash message for not having about me set 
-            flash('<div style="text-align:center;">Please Head to <a href="#">this is a href</a> to set About me for</div>');
+            flash('<div style="text-align:center;">Please Head to <a href="/settings">this is a href</a> to set About me for</div>');
             return redirect()->back(); 
         }
 
+        if(!$user->record){
+            flash('<div style="text-align:center;">Please Head to <a href="/settings">this is a href</a> to set Record ! </div>');
+            return redirect()->back(); 
+        }
+
+        
         return view('profile.show', compact('user'));
     }
 }
