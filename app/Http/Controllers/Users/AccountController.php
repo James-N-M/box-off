@@ -7,6 +7,7 @@ use Image;
 use App\About; 
 use App\Location;
 use App\Club; 
+use App\Record; 
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,6 @@ class AccountController extends Controller
     {
         $clubs = Club::all();
         $locations = Location::all(); 
-        //return $locations; 
         return view('settings.account', compact('clubs', 'locations'));
     }
 
@@ -65,13 +65,36 @@ class AccountController extends Controller
         }
 
         if($request->get('wins')){
-            Auth::user()->record->wins = $request->get('wins');
-            Auth::user()->save(); 
+            if(!Auth::user()->record){
+                $record = new Record; 
+                $record->id = Auth::user()->id; 
+                $record->wins = $request->get('wins'); 
+                $record->loses = 0;
+                $record->save(); 
+            }
+            else{
+                $record = Record::find(Auth::user()->id); 
+                $record->wins = $request->get('wins');
+                $record->save(); 
+            }
+
         }
 
         if($request->get('loses')){
-            Auth::user()->record->loses = $request->get('wins');
-            Auth::user()->save(); 
+            if(!Auth::user()->record)
+            {
+                $record = new Record; 
+                $record->id = Auth::user()->id; 
+                $record->loses = $request->get('loses'); 
+                $record->wins = 0;
+                $record->save(); 
+            }
+            else
+            {
+                $record = Record::find(Auth::user()->id); 
+                $record->loses = $request->get('loses');
+                $record->save(); 
+            }
         }
         
         if($request->hasFile('avatar')){

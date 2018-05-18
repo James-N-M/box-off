@@ -29,8 +29,8 @@
                     <div class="col-md-12 col-lg-6">
                         <ul class="list-group">
                             <li class="list-group-item">Record: Win \ Lose</li>
-                            <li class="list-group-item list-group-item-success"></li>
-                            <li class="list-group-item list-group-item-danger"></li>
+                            <li class="list-group-item list-group-item-success">Wins {{ $user->record->wins }}</li>
+                            <li class="list-group-item list-group-item-danger">Loses {{ $user->record->loses }}</li>
                         </ul>
                     </div>
                 </div>
