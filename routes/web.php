@@ -21,4 +21,8 @@ Route::post('/posts', 'PostController@store');
 // Comment Routes 
 Route::post('/comment', 'CommentController@store'); 
 
+Route::get('test', function(){
+    return view('playground'); 
+});
+
 Auth::routes();

@@ -36,46 +36,27 @@
                             <label for="about">Something Me</label>
                             <input id="hi" type="textfield" class="form-control" name="hey">
                         </div>
+                        
                         <div class="form-group col-md-12">
                             <label for="about">About Me <i>Char Max: 230</i></label>
                             <textarea class="form-control" id="about" name="about" rows="3" maxlength="230"></textarea>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="status">Status</label>
-                            <select class="form-control" id="status" name="status">
-                                <option></option>
-                                <option value="2">Boxer</option>
-                                <option value="3">Coach</option>
-                                <option value="4">Doctor</option>
-                                <option value="5">Referee</option>
-                            </select>
-                        </div>
+
+                        <status-dropdown></status-dropdown>
+
                         <div class="form-group col-md-3">
                             <label for="wins">Wins</label>
                             <input class="form-control"type="number" name="wins">
                         </div>
+                        
                         <div class="form-group col-md-3">
                             <label for="loss">Loses</label>
                             <input class="form-control"type="number" name="loses">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="location">Location</label>
-                            <select class="form-control" id="location" name="location">
-                                <option value=""></option>  
-                                @foreach($locations as $location)
-                                    <option value="{{$location->id}}">{{$location->city}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="club">Club</label>
-                            <select class="form-control" id="club" name="club">
-                                <option value=""></option>
-                                @foreach($clubs as $club)
-                                    <option value="{{$club->id}}">{{$club->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+
+                        <location-dropdown></location-dropdown>
+
+                        <club-dropdown></club-dropdown>
                     </div>
 
                     <hr>
