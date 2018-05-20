@@ -18,11 +18,9 @@ window.chartjs = require('chart.js');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-Vue.component('example', require('./components/Example.vue'));
-
-
+Vue.component('location-dropdown', require('./components/DropDowns/Location.vue'));
+Vue.component('club-dropdown', require('./components/DropDowns/Club.vue'));
+Vue.component('status-dropdown', require('./components/DropDowns/Status.vue'));
 
 const app = new Vue({
     el: '#app'
