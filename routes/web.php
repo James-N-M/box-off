@@ -25,4 +25,6 @@ Route::get('test', function(){
     return view('playground'); 
 });
 
+Route::get('testing-route', 'AboutController@index');
+
 Auth::routes();
