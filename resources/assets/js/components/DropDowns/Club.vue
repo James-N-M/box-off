@@ -2,6 +2,7 @@
     <div class="form-group col-md-6">
         <label for="location">Club</label>
         <select class="form-control" name="club">
+            <option value=""></option>
             <option
                 v-bind:key="club.id"
                 v-for="club in clubs"

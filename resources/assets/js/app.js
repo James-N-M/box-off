@@ -21,6 +21,7 @@ window.chartjs = require('chart.js');
 Vue.component('location-dropdown', require('./components/DropDowns/Location.vue'));
 Vue.component('club-dropdown', require('./components/DropDowns/Club.vue'));
 Vue.component('status-dropdown', require('./components/DropDowns/Status.vue'));
+Vue.component('about-settings', require('./components/Settings/About.vue'));
 
 const app = new Vue({
     el: '#app'

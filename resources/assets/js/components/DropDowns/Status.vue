@@ -2,6 +2,7 @@
     <div class="form-group col-md-6">
         <label for="location">Status</label>
         <select class="form-control" name="status">
+            <option value=""></option>
             <option
                 v-bind:key="status.id"
                 v-for="status in statuses"

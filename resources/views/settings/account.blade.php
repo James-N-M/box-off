@@ -37,10 +37,7 @@
                             <input id="hi" type="textfield" class="form-control" name="hey">
                         </div>
                         
-                        <div class="form-group col-md-12">
-                            <label for="about">About Me <i>Char Max: 230</i></label>
-                            <textarea class="form-control" id="about" name="about" rows="3" maxlength="230"></textarea>
-                        </div>
+                        <about-settings></about-settings>
 
                         <status-dropdown></status-dropdown>
 
