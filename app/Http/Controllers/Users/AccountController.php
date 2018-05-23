@@ -12,8 +12,13 @@ use App\Record;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Traits\PhotoUploadTrait;
+
 class AccountController extends Controller
 {
+
+    use App\Traits\PhotoUploadTrait;
+    
     public function show()
     {
         $clubs = Club::all();
@@ -23,87 +28,82 @@ class AccountController extends Controller
 
     public function update(Request $request)
     {
-        if($request->get('password'))
+        if(request('password'))
         {
             $this->validate(request(), [
                 'password' => 'confirmed|min:6'
             ]);
-            Auth::user()->password = bcrypt($request->input('password'));
+            Auth::user()->password = bcrypt(request('password'));
             Auth::user()->save(); 
         }
 
-        if($request->get('about')){
+        if(request('about')){
             $this->validate(request(), [
                 'about' => 'min:10'
             ]);
             if(!Auth::user()->about){
                 return About::create([
                     'id' => Auth::user()->id,
-                     'body' => $request->get('about'),
+                    'body' => request('about'),
                 ]);
             }
             else{
                 $about = Auth::user()->about;
-                $about->body = $request->get('about');
+                $about->body = request('about');
                 $about->save(); 
             }
         }
 
-        if($request->get('status')){
-            Auth::user()->status_id = $request->get('status');
+        if(request('status')){
+            Auth::user()->status_id = request('status');
             Auth::user()->save(); 
         }
 
-        if($request->get('location')){
-            Auth::user()->location_id = $request->get('location');
+        if(request('location')){
+            Auth::user()->location_id = request('location');
             Auth::user()->save(); 
         }
 
-        if($request->get('club')){
-            Auth::user()->club_id = $request->get('club');
+        if(request('club')){
+            Auth::user()->club_id = request('club');
             Auth::user()->save(); 
         }
 
-        if($request->get('wins')){
+        if(request('wins')){
             if(!Auth::user()->record){
                 $record = new Record; 
                 $record->id = Auth::user()->id; 
-                $record->wins = $request->get('wins'); 
+                $record->wins = request('wins'); 
                 $record->loses = 0;
                 $record->save(); 
             }
             else{
                 $record = Record::find(Auth::user()->id); 
-                $record->wins = $request->get('wins');
+                $record->wins = request('wins');
                 $record->save(); 
             }
 
         }
 
-        if($request->get('loses')){
+        if(request('loses')){
             if(!Auth::user()->record)
             {
                 $record = new Record; 
                 $record->id = Auth::user()->id; 
-                $record->loses = $request->get('loses'); 
+                $record->loses = request('loses'); 
                 $record->wins = 0;
                 $record->save(); 
             }
             else
             {
                 $record = Record::find(Auth::user()->id); 
-                $record->loses = $request->get('loses');
+                $record->loses = request('loses');
                 $record->save(); 
             }
         }
-        
-        if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar'); 
-            $filename = time() . '.' . $avatar->getClientOriginalExtension(); 
-            Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename));
 
-            Auth::user()->avatar = $filename; 
-            Auth::user()->save(); 
+        if($request->hasFile('avatar')){
+            profilePhotoUpload($request->file('avatar'));
         }
 
         flash('Great Job Profile Successfully Updated'); 

@@ -4,7 +4,7 @@
 <main class="col-md-8 offset-md-2 my-3 p-3">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-text text-capitalize">Your account</h5>
+                <h5 class="card-text text-capitalize">Your Account</h5>
             </div>
             <div class="card-body">
 
@@ -33,7 +33,7 @@
                             <input id="avatar" type="file" class="form-control" name="avatar">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="about">Something Me</label>
+                            <label for="about">Profile Photo</label>
                             <input id="hi" type="textfield" class="form-control" name="hey">
                         </div>
                         
@@ -41,15 +41,9 @@
 
                         <status-dropdown></status-dropdown>
 
-                        <div class="form-group col-md-3">
-                            <label for="wins">Wins</label>
-                            <input class="form-control"type="number" name="wins">
-                        </div>
-                        
-                        <div class="form-group col-md-3">
-                            <label for="loss">Loses</label>
-                            <input class="form-control"type="number" name="loses">
-                        </div>
+                        <win-input></win-input>
+
+                        <lose-input></lose-input>
 
                         <location-dropdown></location-dropdown>
 

@@ -18,10 +18,17 @@ window.chartjs = require('chart.js');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Drop Down Components 
 Vue.component('location-dropdown', require('./components/DropDowns/Location.vue'));
 Vue.component('club-dropdown', require('./components/DropDowns/Club.vue'));
 Vue.component('status-dropdown', require('./components/DropDowns/Status.vue'));
+
+// Settings Components 
 Vue.component('about-settings', require('./components/Settings/About.vue'));
+
+// Numeric Inputs 
+Vue.component('win-input', require('./components/Inputs/NumericInput/Win.vue'));
+Vue.component('lose-input', require('./components/Inputs/NumericInput/Lose.vue'));
 
 const app = new Vue({
     el: '#app'
