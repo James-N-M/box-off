@@ -12,13 +12,13 @@ use App\Record;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Traits\PhotoUploadTrait;
+//use App\Traits\PhotoUploadTrait;
 
 class AccountController extends Controller
 {
 
-    use App\Traits\PhotoUploadTrait;
-    
+    //use App\Traits\PhotoUploadTrait;
+
     public function show()
     {
         $clubs = Club::all();
@@ -103,7 +103,7 @@ class AccountController extends Controller
         }
 
         if($request->hasFile('avatar')){
-            profilePhotoUpload($request->file('avatar'));
+            //profilePhotoUpload($request->file('avatar'));
         }
 
         flash('Great Job Profile Successfully Updated'); 
