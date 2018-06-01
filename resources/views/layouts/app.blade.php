@@ -14,7 +14,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="/title-icon.png"/>
@@ -47,13 +47,13 @@
                         @else
                         <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; border-radius: 50%; margin-top:5px;">
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->status->title }} 
+                                {{ Auth::user()->type ?? 'No Title' }}
                             </li>
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->club->name }} 
+                                {{ Auth::user()->club }}
                             </li>
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->location->city }}  
+                                {{ optional(Auth::user()->location) }}
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -82,6 +82,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>  
+    </div>
 </body>
 </html>

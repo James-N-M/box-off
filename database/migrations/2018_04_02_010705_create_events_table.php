@@ -17,9 +17,9 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('location_id');
-            $table->integer('referee_id');
-            $table->integer('doctor_id');
-            $table->string('date'); 
+            $table->integer('referee_id')->index();
+            $table->integer('doctor_id')->index();
+            $table->date('date');
             $table->timestamps();
         });
     }
