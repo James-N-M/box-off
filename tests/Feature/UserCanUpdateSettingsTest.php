@@ -1,15 +1,20 @@
 <?php
 namespace Tests\Feature;
+
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
 class UserCanUpdateSettingsTest extends TestCase
 {
     use RefreshDatabase;
 
     function test_settings_can_be_viewed()
     {
-        $this->signIn();
-        $this->get('/settings')->assertStatus(200);
+        $user = $this->signIn();
+
+        $this->e()->get('/settings')
+            ->assertStatus(200)
+            ->assertSeeText($user->name);
     }
 
     function test_settings_can_be_updated()
@@ -20,33 +25,35 @@ class UserCanUpdateSettingsTest extends TestCase
             'email' => 'john@example.com',
             'about' => 'I like to drive tractors.',
         ])->assertRedirect();
+
         $user->refresh();
         $this->assertEquals($attribute['name'], $user->name);
         $this->assertEquals($attribute['email'], $user->email);
         $this->assertEquals($attribute['about'], $user->about);
     }
 
-    function update($attributes = [])
-    {
-        $this->signIn();
-        return $this->json('POST', '/settings', array_merge([
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
-            'about' => 'I like to drive tractors.',
-        ], $attributes));
-    }
-
     function test_name_is_required()
     {
-        $this->update([
+        $this->updateSettings([
             'name' => '',
         ])->assertJsonValidationErrors(['name']);
     }
 
     function test_email_is_required()
     {
-        $this->update([
+        $this->updateSettings([
             'email' => '',
         ])->assertJsonValidationErrors(['email']);
+    }
+
+    function updateSettings($attributes = [])
+    {
+        $this->signIn();
+
+        return $this->json('POST', '/settings', array_merge([
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'about' => 'I like to drive tractors.',
+        ], $attributes));
     }
 }
