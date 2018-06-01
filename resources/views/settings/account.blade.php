@@ -36,18 +36,6 @@
                             <label for="about">Profile Photo</label>
                             <input id="hi" type="textfield" class="form-control" name="hey">
                         </div>
-                        
-                        <about-settings></about-settings>
-
-                        <status-dropdown></status-dropdown>
-
-                        <win-input></win-input>
-
-                        <lose-input></lose-input>
-
-                        <location-dropdown></location-dropdown>
-
-                        <club-dropdown></club-dropdown>
                     </div>
 
                     <hr>
