@@ -24,6 +24,8 @@ class UserCanUpdateSettingsTest extends TestCase
             'name' => 'John Doe',
             'email' => 'john@example.com',
             'about' => 'I like to drive tractors.',
+            'location' => 'Windsor',
+            'club' => 'Windsor Amateur',
         ])->assertRedirect();
 
         $user->refresh();

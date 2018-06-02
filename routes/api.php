@@ -18,5 +18,5 @@ use Illuminate\Http\Request;
 // });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'API'/*, 'middleware' => 'auth:api'*/], function () {
-
+    
 });

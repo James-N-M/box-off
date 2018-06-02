@@ -26,15 +26,26 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="password_confirmation">Password Confirmation: </label>
-                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" >      
+                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">      
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="avatar">Avatar</label>
-                            <input id="avatar" type="file" class="form-control" name="avatar">
+                            <select name="" id="" class="form-control">
+                            <option value="">Windsor</option>
+                            <option value="">Toronto</option>
+                            <option value="">OrangeVille</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="about">Profile Photo</label>
-                            <input id="hi" type="textfield" class="form-control" name="hey">
+                            <label for="club">Club</label>
+                            <input id="club" class="form-control" name="club">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="about">About</label>
+                            <input id="about" class="form-control" name="avatar">
                         </div>
                     </div>
 

@@ -13,7 +13,7 @@
                      </div>
                     <div class="col-md-12 col-lg-6">
                         <h3>About Me</h3>
-                            <p class="alert alert-success">{{ $user->about->body }}</p>
+                            <p class="alert alert-success">{{ $user->about }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -21,16 +21,16 @@
                         <ul class="list-group">
                             <li class="list-group-item">Name:{{ $user->name }}</li>
                             <li class="list-group-item list-group-item-success">Email:{{ $user->email }}</li>
-                            <li class="list-group-item list-group-item-info">Status:{{ $user->status->title }}</li>
-                            <li class="list-group-item list-group-item-warning">Location:{{ $user->location->city }}</li>
-                            <li class="list-group-item list-group-item-danger">Club:{{ $user->club->name }}</li>
+                            <li class="list-group-item list-group-item-info">Type:</li>
+                            <li class="list-group-item list-group-item-warning"></li>
+                            <li class="list-group-item list-group-item-danger"></li>
                         </ul>
                      </div>
                     <div class="col-md-12 col-lg-6">
                         <ul class="list-group">
                             <li class="list-group-item">Record: Win \ Lose</li>
-                            <li class="list-group-item list-group-item-success">Wins {{ $user->record->wins }}</li>
-                            <li class="list-group-item list-group-item-danger">Loses {{ $user->record->loses }}</li>
+                            <li class="list-group-item list-group-item-success"></li>
+                            <li class="list-group-item list-group-item-danger"></li>
                         </ul>
                     </div>
                 </div>

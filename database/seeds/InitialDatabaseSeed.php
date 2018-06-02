@@ -14,18 +14,14 @@ class InitialDatabaseSeed extends Seeder
     public function run()
     {
     	// Add first status
-        DB::table('statuses')->insert([
-        	'title' => 'Member'
+        DB::table('users')->insert([
+            'name' => 'James',
+            'email' => 'test@test.com',
+            'type' => 'Member',
+            'location' => 'Windsor',
+            'club' => 'Windsor Amateur',
+            'about' => 'Member',
+            'password' => bcrypt('123456'),
         ]);
-        // Add first location
-        DB::table('locations')->insert([
-        	'city' => 'Ontario'
-        ]);
-        // Add first club
-        DB::table('clubs')->insert([
-        	'location' => 1,
-        	'name' => 'No Club'
-        ]);
-
     }
 }

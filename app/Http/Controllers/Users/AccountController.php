@@ -12,18 +12,13 @@ use App\Record;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-//use App\Traits\PhotoUploadTrait;
 
 class AccountController extends Controller
 {
 
-    //use App\Traits\PhotoUploadTrait;
-
     public function show()
     {
-        $clubs = Club::all();
-        $locations = Location::all();
-        return view('settings.account', compact('clubs', 'locations'));
+        return view('settings.account');
     }
 
     public function update(Request $request)
@@ -34,11 +29,12 @@ class AccountController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'about' => '',
+            'location' => '',
+            'club' => '',
         ]);
 
         $user->update($attributes);
 
-        flash('Great Job Profile Successfully Updated');
         return redirect()->back();
     }
 }
