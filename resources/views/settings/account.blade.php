@@ -29,23 +29,38 @@
                             <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">      
                         </div>
                         <div class="form-group col-md-6">
-                            <select name="" id="" class="form-control">
-                            <option value="">Windsor</option>
-                            <option value="">Toronto</option>
-                            <option value="">OrangeVille</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-
+                        <label for="type">Type</label>
+                            <select name="type" id="type" class="form-control">
+                            <option value="{{ old('type', Auth::user()->type) }}">{{ old('type', Auth::user()->type) }}</option>
+                                <option value="boxer">Boxer</option>
+                                <option value="coach">Coach</option>
+                                <option value="referee">Referee</option>
+                                <option value="doctor">Doctor</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="club">Club</label>
-                            <input id="club" class="form-control" name="club">
+                        <label for="location">Location</label>
+                            <select name="location" id="location" class="form-control">
+                            <option value="{{ old('location', Auth::user()->location) }}">{{ old('location', Auth::user()->location) }}</option>
+                                <option value="Windsor">Windsor</option>
+                                <option value="London">London</option>
+                                <option value="Toronto">Toronto</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="about">About</label>
-                            <input id="about" class="form-control" name="avatar">
+                        <label for="location">Club</label>
+                            <select name="club" id="club" class="form-control">
+                            <option value="{{ old('club', Auth::user()->club) }}">{{ old('club', Auth::user()->club) }}</option>
+                                <option value="Windsor Amateur">Windsor Amateur</option>
+                                <option value="Rough Boxing">Rough Boxing</option>
+                                <option value="Border City Boxing">Border City Boxing</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="location">About</label>
+                            <textarea class="form-control" name="about" id="about" rows="10" 
+                            value="{{ old('about', Auth::user()->about) }}"
+                            >{{ old('club', Auth::user()->about) }}</textarea>
                         </div>
                     </div>
 

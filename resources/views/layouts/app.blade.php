@@ -36,6 +36,7 @@
                     @auth
                     <ul class="navbar-nav mr-auto">
                             <li><a class="nav-link" href="/profile/{{ Auth::user()->id }}">Profile</a></li>
+                            <li><a class="nav-link" href="/events">Events</a></li>
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->
@@ -47,7 +48,7 @@
                         @else
                         <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; border-radius: 50%; margin-top:5px;">
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->type }}
+                                {{ ucwords(Auth::user()->type) }}
                             </li>
                             <li class="nav-link" style="font-weight:bold;">
                                 {{ Auth::user()->club }}

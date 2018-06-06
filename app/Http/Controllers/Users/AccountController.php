@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Users;
 
 use Auth;
 use Image;
-use App\About;
-use App\Location;
 use App\Club;
+use App\About;
 use App\Record;
-
+use App\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 
 class AccountController extends Controller
 {
@@ -28,9 +26,10 @@ class AccountController extends Controller
         $attributes = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'about' => '',
+            'type' => '',
             'location' => '',
             'club' => '',
+            'about' => 'min:10'
         ]);
 
         $user->update($attributes);

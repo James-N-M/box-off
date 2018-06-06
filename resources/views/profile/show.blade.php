@@ -19,11 +19,11 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
                         <ul class="list-group">
-                            <li class="list-group-item">Name:{{ $user->name }}</li>
-                            <li class="list-group-item list-group-item-success">Email:{{ $user->email }}</li>
-                            <li class="list-group-item list-group-item-info">Type:</li>
-                            <li class="list-group-item list-group-item-warning"></li>
-                            <li class="list-group-item list-group-item-danger"></li>
+                            <li class="list-group-item">Name: {{ $user->name }} </li>
+                            <li class="list-group-item list-group-item-success">Email: {{ $user->email }} </li>
+                            <li class="list-group-item list-group-item-info">Type: {{ $user->type }}</li>
+                            <li class="list-group-item list-group-item-warning">Location {{ $user->location }}</li> 
+                            <li class="list-group-item list-group-item-danger">Club {{ $user->club }}</li> 
                         </ul>
                      </div>
                     <div class="col-md-12 col-lg-6">
