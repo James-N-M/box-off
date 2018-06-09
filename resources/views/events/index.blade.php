@@ -10,7 +10,7 @@
         <tr>
             <th>Name</th>
             <th>Location</th>
-            <th>About</th>
+            <th>Description</th>
             <th>Club</th>
             <th>Doctor</th>
             <th>Referee</th>
@@ -20,7 +20,16 @@
         </thead>
         <tbody>
         <tr>
-            <td></td>
+            @foreach ($events as $event)
+                <td>{{ $event->name }}</td>
+                <td>{{ $event->location }}</td>
+                <td>{{ $event->description }}</td>
+                <td>unset</td>
+                <td>unset</td>
+                <td>unset</td>
+                <td>{{ $event-> date }}</td>
+                <td><a href="#"><span class="fa fa-edit"></span></a></td>
+            @endforeach
             <!-- <td>Delete Event</td> -->
         </tr>
     </tbody>

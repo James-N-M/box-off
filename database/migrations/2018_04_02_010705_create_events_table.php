@@ -16,11 +16,11 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('location')->nullable();
+            $table->string('description');
+            $table->string('location');
             $table->string('club')->nullable();
-            $table->string('about')->nullable();
-            $table->integer('doctor');
-            $table->integer('referee');
+            $table->integer('doctor')->nullable();
+            $table->integer('referee')->nullable();
             $table->date('date');
             $table->timestamps();
         });

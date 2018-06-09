@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Event; 
+
 use Illuminate\Http\Request;
+
 
 class EventController extends Controller
 {
@@ -13,7 +16,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('events.index'); 
+        $events = Event::all(); 
+        return view('events.index', compact('events')); 
     }
 
     /**
@@ -34,7 +38,20 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return Event::create(
+        //     [
+        //         'name' => request('name'), 
+        //         'description' => request('description'),
+        //         'date' => request('date'),
+        //         'location' => request('location')
+        //     ]
+        //     );
+        $event = new Event; 
+        $event->name = request('name');
+        $event->description = request('description');
+        $event->date = request('date');
+        $event->location = request('location'); 
+        $event->save(); 
     }
 
     /**
