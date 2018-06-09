@@ -28,9 +28,12 @@
                 <td>unset</td>
                 <td>unset</td>
                 <td>{{ $event-> date }}</td>
-                <td><a href="#"><span class="fa fa-edit"></span></a></td>
+                <td>
+                    <a href="/events/{{$event->id}}/edit"><span class="fa fa-edit"></span></a>
+                    <a href=""><span class="fa fa-trash"></span></a>
+                </td>
             @endforeach
-            <!-- <td>Delete Event</td> -->
+            
         </tr>
     </tbody>
 </table>
