@@ -31,6 +31,7 @@
                 <td>
                     <a href="events/edit/{{$event->id}}"><span class="fa fa-edit"></span></a>
                     <a href=""><span class="fa fa-trash"></span></a>
+                    <a href="/events/{{$event->id}}/matches"><span class="fa fa-hand-rock"></span></a>
                 </td>
             @endforeach
             
