@@ -12,7 +12,8 @@ Route::get('/post/{post}', 'PostController@show');
 // Event Routes 
 Route::get('/events', 'EventController@index'); 
 Route::get('/events/create', 'EventController@create'); 
-Route::get('/events/{event}/edit','EventController@edit'); 
+Route::get('/events/edit/{id}','EventController@edit'); 
+Route::put('/events','EventController@update'); 
 Route::post('events/store','EventController@store'); 
 
 // Comment Routes

@@ -71,9 +71,10 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        return view('events.edit', compact('event'));
+        $event = Event::findOrFail($id); 
+        return view('events.edit')->withEvent($event);
     }
 
     /**
@@ -85,7 +86,19 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request . 'id ' . $id; 
+        $event = Event::findorFail($id); 
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $event->fill(request()->all)->save(); 
+
+        Session::flash('flash_message', 'Event successfully added!');
+
+        return redirect()->back();
     }
 
     /**

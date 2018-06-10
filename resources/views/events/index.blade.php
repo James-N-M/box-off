@@ -29,7 +29,7 @@
                 <td>unset</td>
                 <td>{{ $event-> date }}</td>
                 <td>
-                    <a href="/events/{{$event->id}}/edit"><span class="fa fa-edit"></span></a>
+                    <a href="events/edit/{{$event->id}}"><span class="fa fa-edit"></span></a>
                     <a href=""><span class="fa fa-trash"></span></a>
                 </td>
             @endforeach

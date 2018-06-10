@@ -16,31 +16,30 @@
             </div>
             <div class="card-body">
 
-               <form action="/events/store" method="PUT">
+               <form action="/events/{{$event->id}}/" method="PUT">
                     {{ csrf_field() }}
-                    {{$event}}
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="name">* Title</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="{{$event->name}}">
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $event->name }}">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description"  rows="5" class="form-control"></textarea>
+                            <textarea name="description" id="description"  rows="5" class="form-control">{{$event->description}}</textarea>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="name">* Event Date</label>
-                            <input type="text" class="form-control" id="date" name="date" placeholder="{{ now()->toDateString() }}">
+                            <input type="text" class="form-control" id="date" name="date" value="{{ $event->date }}">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="name">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Kronk Boxing Community Center, 9520 Mettetal St, Detroit, MI 48227, USA">
+                            <input type="text" class="form-control" id="location" name="location" value="{{ $event->location }}">
                         </div>
                     </div>
                     <hr>
