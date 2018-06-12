@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Event; 
-
 use Illuminate\Http\Request;
+use App\Event;
+use App\Match; 
 
-
-class EventController extends Controller
+class MatchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all(); 
-        return view('events.index', compact('events')); 
+        
     }
 
     /**
@@ -27,7 +25,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        //
     }
 
     /**
@@ -38,20 +36,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        // return Event::create(
-        //     [
-        //         'name' => request('name'), 
-        //         'description' => request('description'),
-        //         'date' => request('date'),
-        //         'location' => request('location')
-        //     ]
-        //     );
-        $event = new Event; 
-        $event->name = request('name');
-        $event->description = request('description');
-        $event->date = request('date');
-        $event->location = request('location'); 
-        $event->save(); 
+        //
     }
 
     /**
@@ -73,8 +58,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::findOrFail($id); 
-        return view('events.edit')->withEvent($event);
+        //
     }
 
     /**
@@ -86,18 +70,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $event = Event::findorFail($id); 
-
-        $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required'
-        ]);
-
-        $event->fill(request()->all)->save(); 
-
-        Session::flash('flash_message', 'Event successfully added!');
-
-        return redirect()->back();
+        //
     }
 
     /**
