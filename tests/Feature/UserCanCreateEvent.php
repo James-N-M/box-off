@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class UserCanCreateEvent extends TestCase
 {
     use RefreshDatabase;
-
+/*
     function test_events_can_be_viewed()
     {
         $user = $this->signIn();
@@ -58,4 +58,5 @@ class UserCanCreateEvent extends TestCase
     //         'about' => 'I like to drive tractors.',
     //     ], $attributes));
     // }
+*/
 }

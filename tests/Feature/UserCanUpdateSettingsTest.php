@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class UserCanUpdateSettingsTest extends TestCase
 {
     use RefreshDatabase;
-
+/*
     function test_settings_can_be_viewed()
     {
         $user = $this->signIn();
@@ -58,4 +58,5 @@ class UserCanUpdateSettingsTest extends TestCase
             'about' => 'I like to drive tractors.',
         ], $attributes));
     }
+*/
 }
