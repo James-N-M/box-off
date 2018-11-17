@@ -23,7 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get(); 
-        return view('home', compact('posts'));
+        return view('home');
     }
 }

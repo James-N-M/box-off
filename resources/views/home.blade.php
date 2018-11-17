@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Welcome To Box-Off {{ Auth::user()->name }} </div>
-
                 <div class="card-body">
                     <example-component></example-component>
                 </div>
