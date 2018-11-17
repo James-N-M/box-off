@@ -15,13 +15,14 @@ class InitialDatabaseSeed extends Seeder
     {
     	// Add first status
         DB::table('users')->insert([
-            'name' => 'James',
-            'email' => 'test@test.com',
-            'type' => 'Member',
+            'name' => 'Admin',
+            'email' => 'admin@test.com',
+            'type' => 'Admin',
             'location' => 'Windsor',
-            'club' => 'Windsor Amateur',
-            'about' => 'Member',
-            'password' => bcrypt('123456'),
+            'club' => 'Club Admin',
+            'about' => 'Admin user',
+            'password' => bcrypt('admin'),
         ]);
+        $this->call(UsersTableSeeder::class);
     }
 }
