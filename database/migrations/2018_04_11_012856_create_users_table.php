@@ -25,12 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-            // #1  optional($var)->foo
-            // #2 $var->foo->bar ?? 'Default'
-            // #3 $this->belongsTo(Club::class)->withDefault(['name' => 'Coach']);
-            // $club->name // Coach
-
         });
     }
 
